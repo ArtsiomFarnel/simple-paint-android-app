@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleCalculator
 {
-    class SimpleCalculator
+    class SimpleCalculatorL
     {
         private double a = 0;
         private double memory = 0;
