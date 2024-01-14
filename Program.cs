@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SimpleCalculator
+namespace Calculator
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace SimpleCalculator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SimpleCalculatorForm());
+            Application.Run(new CalculatorForm());
         }
     }
 }
