@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SimpleCalculator
+namespace Calculator
 {
-    public partial class SimpleCalculatorForm : Form
+    public partial class CalculatorForm : Form
     {
-        SimpleCalculatorLogic Calculator;
+        CalculatorLogic CalculatorLogic;
         int MemoryClickCount;
         TextBox textBox;
         Label label;
         public SimpleCalculatorForm()
         {
             InitializeComponent();
-            Calculator = new Calculator();
+            CalculatorLogic = new CalculatorLogic();
 
             TextBox.Text = "0";
             TextBoxEn.Text = "0";
@@ -113,7 +113,7 @@ namespace SimpleCalculator
             textBox.Text = "0";
             label.Text = "";
 
-            Calculator.ClearA();
+            CalculatorLogic.ClearA();
             FreeButtons();
 
             MemoryClickCount = 0;
@@ -207,27 +207,27 @@ namespace SimpleCalculator
         {
             
             if (!ButtonMultiplication.Enabled)
-                textBox.Text = Calculator.Multiplication(Convert.ToDouble(textBox.Text)).ToString();
+                textBox.Text = CalculatorLogic.Multiplication(Convert.ToDouble(textBox.Text)).ToString();
 
             if (!ButtonDivision.Enabled)
-                textBox.Text = Calculator.Division(Convert.ToDouble(textBox.Text)).ToString();
+                textBox.Text = CalculatorLogic.Division(Convert.ToDouble(textBox.Text)).ToString();
 
             if (!ButtonSum.Enabled)
-                textBox.Text = Calculator.Sum(Convert.ToDouble(textBox.Text)).ToString();
+                textBox.Text = CalculatorLogic.Sum(Convert.ToDouble(textBox.Text)).ToString();
 
             if (!ButtonSubtraction.Enabled)
-                textBox.Text = Calculator.Subtraction(Convert.ToDouble(textBox.Text)).ToString();
+                textBox.Text = CalculatorLogic.Subtraction(Convert.ToDouble(textBox.Text)).ToString();
 
             if (!ButtonPow.Enabled)
-                textBox.Text = Calculator.Pow(Convert.ToDouble(textBox.Text)).ToString();
+                textBox.Text = CalculatorLogic.Pow(Convert.ToDouble(textBox.Text)).ToString();
 
             if (!ButtonDivisionModule.Enabled)
-                textBox.Text = Calculator.DivisionModule(Convert.ToDouble(textBox.Text)).ToString();
+                textBox.Text = CalculatorLogic.DivisionModule(Convert.ToDouble(textBox.Text)).ToString();
 
             if (!ButtonSqrt.Enabled)
-                textBox.Text = Calculator.Sqrt(Convert.ToDouble(textBox.Text)).ToString();
+                textBox.Text = CalculatorLogic.Sqrt(Convert.ToDouble(textBox.Text)).ToString();
 
-            Calculator.ClearA();
+            CalculatorLogic.ClearA();
             FreeButtons();
 
             MemoryClickCount = 0;
@@ -237,7 +237,7 @@ namespace SimpleCalculator
         {
             if (CanPress())
             {
-                Calculator.PutA(Convert.ToDouble(textBox.Text));
+                CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
 
                 ButtonMultiplication.Enabled = false;
                 label.Text = textBox.Text + "*";
@@ -249,7 +249,7 @@ namespace SimpleCalculator
         {
             if (CanPress())
             {
-                Calculator.PutA(Convert.ToDouble(textBox.Text));
+                CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
 
                 ButtonDivision.Enabled = false;
                 label.Text = textBox.Text + "/";
@@ -262,7 +262,7 @@ namespace SimpleCalculator
         {
             if (CanPress())
             {
-                Calculator.PutA(Convert.ToDouble(textBox.Text));
+                CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
 
                 ButtonSum.Enabled = false;
                 label.Text = textBox.Text + "+";
@@ -275,7 +275,7 @@ namespace SimpleCalculator
         {
             if (CanPress())
             {
-                Calculator.PutA(Convert.ToDouble(textBox.Text));
+                CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
 
                 ButtonSubtraction.Enabled = false;
                 label.Text = textBox.Text + "-";
@@ -288,7 +288,7 @@ namespace SimpleCalculator
         {
             if (CanPress())
             {
-                Calculator.PutA(Convert.ToDouble(textBox.Text));
+                CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
 
                 ButtonSqrt.Enabled = false;
 
@@ -300,7 +300,7 @@ namespace SimpleCalculator
         {
             if (CanPress())
             {
-                Calculator.PutA(Convert.ToDouble(textBox.Text));
+                CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
 
                 ButtonPow.Enabled = false;
                 label.Text = textBox.Text + "^";
@@ -315,9 +315,9 @@ namespace SimpleCalculator
             {
                 if (Convert.ToDouble(textBox.Text) != 0.0)
                 {
-                    Calculator.PutA(Convert.ToDouble(textBox.Text));
-                    textBox.Text = Calculator.Fraction().ToString();
-                    Calculator.ClearA();
+                    CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
+                    textBox.Text = CalculatorLogic.Fraction().ToString();
+                    CalculatorLogic.ClearA();
                     FreeButtons();
                 }
                 else
@@ -329,9 +329,9 @@ namespace SimpleCalculator
         {
             if (CanPress())
             {
-                Calculator.PutA(Convert.ToDouble(textBox.Text));
-                textBox.Text = Calculator.Abs().ToString();
-                Calculator.ClearA();
+                CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
+                textBox.Text = CalculatorLogic.Abs().ToString();
+                CalculatorLogic.ClearA();
                 FreeButtons();
             }
         }
@@ -340,7 +340,7 @@ namespace SimpleCalculator
         {
             if (CanPress())
             {
-                Calculator.PutA(Convert.ToDouble(textBox.Text));
+                CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
 
                 ButtonDivisionModule.Enabled = false;
                 label.Text = textBox.Text + "%";
@@ -356,11 +356,11 @@ namespace SimpleCalculator
                 if ((Convert.ToDouble(textBox.Text) == (int)(Convert.ToDouble(textBox.Text))) && 
                     ((Convert.ToDouble(textBox.Text) >= 0.0)))
                 {
-                    Calculator.PutA(Convert.ToDouble(textBox.Text));
+                    CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
 
-                    textBox.Text = Calculator.Factorial().ToString();
+                    textBox.Text = CalculatorLogic.Factorial().ToString();
 
-                    Calculator.ClearA();
+                    CalculatorLogic.ClearA();
                     FreeButtons();
                 }
                 else
@@ -372,9 +372,9 @@ namespace SimpleCalculator
         {
             if (CanPress())
             {
-                Calculator.PutA(Convert.ToDouble(textBox.Text));
-                textBox.Text = Calculator.Int().ToString();
-                Calculator.ClearA();
+                CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
+                textBox.Text = CalculatorLogic.Int().ToString();
+                CalculatorLogic.ClearA();
                 FreeButtons();
             }
         }
@@ -383,31 +383,31 @@ namespace SimpleCalculator
         {
             if (CanPress())
             {
-                Calculator.PutA(Convert.ToDouble(textBox.Text));
-                textBox.Text = Calculator.CInt().ToString();
-                Calculator.ClearA();
+                CalculatorLogic.PutA(Convert.ToDouble(textBox.Text));
+                textBox.Text = CalculatorLogic.CInt().ToString();
+                CalculatorLogic.ClearA();
                 FreeButtons();
             }
         }
 
         private void ButtonMemorySum_Click(object sender, EventArgs e)
         {
-            Calculator.M_Sum(Convert.ToDouble(textBox.Text));
+            CalculatorLogic.M_Sum(Convert.ToDouble(textBox.Text));
         }
  
         private void ButtonMemorySubtraction_Click(object sender, EventArgs e)
         {
-            Calculator.M_Subtraction(Convert.ToDouble(textBox.Text));
+            CalculatorLogic.M_Subtraction(Convert.ToDouble(textBox.Text));
         }
 
         private void ButtonMemoryMultiplication_Click(object sender, EventArgs e)
         {
-            Calculator.M_Multiplication(Convert.ToDouble(textBox.Text));
+            CalculatorLogic.M_Multiplication(Convert.ToDouble(textBox.Text));
         }
 
         private void ButtonMemoryDivision_Click(object sender, EventArgs e)
         {
-            Calculator.M_Division(Convert.ToDouble(textBox.Text));
+            CalculatorLogic.M_Division(Convert.ToDouble(textBox.Text));
         }
 
         private void ButtonMemoryClear_Click(object sender, EventArgs e)
@@ -417,11 +417,11 @@ namespace SimpleCalculator
                 MemoryClickCount++;
  
                 if (MemoryClickCount == 1)
-                    textBox.Text = Calculator.MemoryShow().ToString();
+                    textBox.Text = CalculatorLogic.MemoryShow().ToString();
  
                 if (MemoryClickCount == 2)
                 {
-                    Calculator.Memory_Clear();
+                    CalculatorLogic.Memory_Clear();
                     textBox.Text = "0";
 
                     MemoryClickCount = 0;
