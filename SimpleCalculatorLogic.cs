@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleCalculator
+namespace Calculator
 {
-    class SimpleCalculatorL
+    class CalculatorLogic
     {
         private double a = 0;
         private double memory = 0;
