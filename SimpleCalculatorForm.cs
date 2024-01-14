@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace lab1_
+namespace SimpleCalculator
 {
-    public partial class Task7Form : Form
+    public partial class SimpleCalculatorForm : Form
     {
-        Calculator Calculator;
+        SimpleCalculator Calculator;
         int MemoryClickCount;
         TextBox textBox;
         Label label;
