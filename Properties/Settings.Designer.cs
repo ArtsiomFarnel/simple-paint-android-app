@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace lab1_.Properties
+namespace SimpleCalculator.Properties
 {
 
 
