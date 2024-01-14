@@ -16,7 +16,7 @@ namespace SimpleCalculator
         int MemoryClickCount;
         TextBox textBox;
         Label label;
-        public Task7Form()
+        public SimpleCalculatorForm()
         {
             InitializeComponent();
             Calculator = new Calculator();
