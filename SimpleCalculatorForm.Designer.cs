@@ -1,6 +1,6 @@
-﻿namespace lab1_
+﻿namespace SimpleCalculator
 {
-    partial class Task7Form
+    partial class SimpleCalculatorForm
     {
         /// <summary>
         /// Required designer variable.
