@@ -12,7 +12,7 @@ namespace SimpleCalculator
 {
     public partial class SimpleCalculatorForm : Form
     {
-        SimpleCalculator Calculator;
+        SimpleCalculatorLogic Calculator;
         int MemoryClickCount;
         TextBox textBox;
         Label label;
